@@ -1,0 +1,12 @@
+.offcanvas{
+    width: clamp(300px,40%,400px) !important;
+}
+aside{
+    
+    width: 50px;
+    height: 100vh;
+    background-color: rgb(134, 134, 134);
+}
+#section-flex{
+    display: flex;
+}

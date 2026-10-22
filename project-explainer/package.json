@@ -1,0 +1,48 @@
+{
+  "name": "project-explainer",
+  "displayName": "Project Explainer",
+  "description": "Analiza todo tu proyecto con IA e inserta comentarios explicativos en cada archivo",
+  "version": "1.0.0",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onCommand:projectExplainer.explain"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "projectExplainer.explain",
+        "title": "🔍 Explain My Project",
+        "category": "Project Explainer"
+      }
+    ],
+    "configuration": {
+      "title": "Project Explainer",
+      "properties": {
+        "projectExplainer.apiKey": {
+          "type": "string",
+          "default": "",
+          "description": "Anthropic API key. Configure it locally in VS Code settings; never commit real keys."
+        }
+      }
+    }
+  },
+  "scripts": {
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "vscode:prepublish": "npm run compile"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "@types/vscode": "^1.85.0",
+    "typescript": "^5.3.0"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.24.0"
+  }
+}

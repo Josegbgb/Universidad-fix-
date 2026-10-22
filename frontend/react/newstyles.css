@@ -1,0 +1,264 @@
+@page {
+  size: A4 landscape;
+  margin: 6mm;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #f3f4f6;
+  color: #111;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 7px;
+}
+
+.sheet {
+  width: 285mm;
+  min-height: 198mm;
+  margin: 0 auto 8mm;
+  padding: 4mm;
+  background: #fff;
+  page-break-after: always;
+}
+
+.header {
+  display: grid;
+  grid-template-columns: 24mm 1fr;
+  gap: 3mm;
+  align-items: center;
+}
+
+.flag-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 18mm;
+}
+
+.flag-box img {
+  max-width: 22mm;
+  max-height: 18mm;
+  object-fit: contain;
+}
+
+.header-title {
+  text-align: center;
+  font-size: 8px;
+  line-height: 1.35;
+}
+
+.title-line:first-child {
+  font-weight: 700;
+  font-size: 10px;
+}
+
+.underline {
+  display: inline-block;
+  min-width: 24mm;
+  border-bottom: 1px solid #111;
+  padding: 0 1mm;
+}
+
+.section-title,
+.sec-head,
+.obs {
+  margin-top: 2mm;
+  font-weight: 700;
+}
+
+.inst-grid {
+  border: 1px solid #111;
+  border-bottom: 0;
+}
+
+.inst-grid .row {
+  display: grid;
+  border-bottom: 1px solid #111;
+}
+
+.inst-grid .r1,
+.inst-grid .r2,
+.inst-grid .r4 {
+  grid-template-columns: 40% 60%;
+}
+
+.inst-grid .r3 {
+  grid-template-columns: 33.333% 33.333% 33.333%;
+}
+
+.field {
+  display: flex;
+  gap: 1mm;
+  min-height: 5mm;
+  align-items: end;
+  padding: 0.8mm;
+  border-right: 1px solid #111;
+}
+
+.field:last-child {
+  border-right: 0;
+}
+
+.lbl {
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.val {
+  flex: 1;
+  min-height: 3mm;
+}
+
+.sec-head {
+  display: grid;
+  grid-template-columns: 52% 48%;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+th,
+td {
+  border: 1px solid #111;
+  padding: 0.6mm;
+  text-align: center;
+  vertical-align: middle;
+  overflow: hidden;
+  overflow-wrap: anywhere;
+}
+
+th {
+  font-weight: 700;
+}
+
+.students {
+  font-size: 5.8px;
+}
+
+.students tbody td {
+  height: 4.05mm;
+}
+
+.col-n { width: 6mm; }
+.col-ci { width: 18mm; }
+.col-ape { width: 30mm; }
+.col-nom { width: 28mm; }
+.col-lugar { width: 22mm; }
+.col-ef { width: 7mm; }
+.col-sexo { width: 8mm; }
+.col-day,
+.col-mes,
+.col-ano { width: 7mm; }
+.col-area { width: 7.6mm; }
+
+.areas-codes td {
+  font-weight: 700;
+}
+
+.total-label,
+.stat-label {
+  font-weight: 700;
+  text-align: left;
+}
+
+.prof-section {
+  margin-top: 2mm;
+}
+
+.prof-curso-grid {
+  display: grid;
+  grid-template-columns: 1fr 42mm;
+  gap: 2mm;
+}
+
+.profesores {
+  font-size: 6px;
+}
+
+.profesores td {
+  height: 5.5mm;
+}
+
+.cw-n { width: 6mm; }
+.cw-abrev { width: 8mm; }
+.cw-area { width: 38mm; }
+.cw-name { width: 52mm; }
+.cw-ci { width: 22mm; }
+.cw-firma { width: auto; }
+
+.p-area,
+.p-name {
+  text-align: left;
+}
+
+.prof-title-full,
+.prof-head-big,
+.p-area-h,
+.curso-head {
+  font-weight: 700;
+}
+
+.curso-bloque {
+  font-size: 6px;
+}
+
+.curso-bloque td {
+  height: 6mm;
+}
+
+.curso-cell {
+  font-weight: 700;
+}
+
+.curso-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.curso-split > div:first-child {
+  border-right: 1px solid #111;
+}
+
+.obs-gap {
+  height: 8mm;
+  border: 1px solid #111;
+  border-top: 0;
+}
+
+.footer-table {
+  margin-top: 2mm;
+  font-size: 6px;
+}
+
+.ft-title,
+.ft-role,
+.ft-field-row {
+  font-weight: 700;
+  text-align: left;
+}
+
+.ft-line-row {
+  height: 5mm;
+}
+
+.ft-stamp-cell {
+  font-weight: 700;
+  text-align: center;
+}
+
+@media print {
+  body {
+    background: #fff;
+  }
+
+  .sheet {
+    margin: 0;
+    box-shadow: none;
+  }
+}

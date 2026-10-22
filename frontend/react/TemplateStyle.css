@@ -1,0 +1,477 @@
+:root {
+  --page-w: 215.9mm;
+  --page-h: 355.6mm;
+  --page-margin: 6mm;
+  --sheet-w: 204mm;
+
+  --font: Arial, Helvetica, sans-serif;
+  --fs-base: 9px;
+  --fs-small: 7.5px;
+  --fs-title: 12px;
+  --fs-section: 9.5px;
+
+  --bd: 1px solid #000;
+  --bd-thin: 0.5px solid #000;
+
+  --row-h: 4mm;
+  --header-row-h: 5mm;
+  --prof-row-h: 4.5mm;
+  --inst-row-h: 5mm;
+
+  /* Student table columns */
+  --c-n:      5mm;
+  --c-ci:    14mm;
+  --c-ape:   22mm;
+  --c-nom:   22mm;
+  --c-lugar: 14mm;
+  --c-ef:     5mm;
+  --c-sexo:   5mm;
+  --c-day:    5mm;
+  --c-mes:    5mm;
+  --c-ano:    5mm;
+  --c-area:   6mm;
+
+  /* Prof table columns — la tabla de profesores ocupa sheet-w - 38mm (bloque VI) - 2*padding */
+  --p-n:      5mm;   /* mismo que --c-n */
+  --p-abrev:  8mm;
+  --p-area:  40mm;
+  --p-name:  55mm;
+  --p-ci:    22mm;
+  --p-firma:  auto;
+}
+
+@page { size: legal portrait; margin: var(--page-margin); }
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0; padding: 0;
+  font-family: var(--font);
+  font-size: var(--fs-base);
+  color: #000;
+  background: #ddd;
+}
+
+.sheet {
+  width: var(--sheet-w);
+  margin: 8mm auto;
+  background: #fff;
+  padding: 15px;
+}
+@media print {
+  body { background: #fff; }
+  .sheet { margin: 0; }
+}
+
+/* ===========================================================================
+   HEADER
+   =========================================================================== */
+.header {
+  display: grid;
+  grid-template-columns: 100mm 1fr;
+}
+.flag-box { width: 100%; align-self: center; }
+.flag-box img { width: 90%; height: 35px; }
+.header-title { padding: 2mm 3mm; width: 80%; justify-self: right; text-align: center; }
+.title-main { font-size: var(--fs-title); font-weight: bold; text-align: center; margin-bottom: 2mm; }
+.title-line { margin-top: 1mm; }
+.underline { border-bottom: var(--bd); display: inline-block; min-width: 5mm; padding: 0 2mm; }
+
+/* ===========================================================================
+   SECTION TITLES
+   =========================================================================== */
+.section-title {
+  font-weight: bold;
+  font-size: var(--fs-section);
+  padding: 1mm 1mm;
+  background: #fff;
+}
+
+/* ===========================================================================
+   INSTITUTION INFO
+   =========================================================================== */
+.inst-grid { border-bottom: var(--bd); }
+.inst-grid .row { display: grid; min-height: var(--inst-row-h); }
+.inst-grid .row:first-child { border-top: 0; }
+.inst-grid .r1 { grid-template-columns: 60mm 1fr; }
+.inst-grid .r2 { grid-template-columns: 1.5fr 1fr; }
+.inst-grid .r3 { grid-template-columns: 1fr 1fr 1fr; }
+.inst-grid .r4 { grid-template-columns: 2fr 1fr; }
+.inst-grid .field { display: flex; align-items: center; padding: 0 1.5mm; gap: 2mm; }
+.inst-grid .field:last-child { border-right: 0; }
+.inst-grid .lbl { font-weight: bold; }
+.inst-grid .val { flex: 1; }
+
+/* ===========================================================================
+   STUDENTS TABLE  (III + IV)
+   =========================================================================== */
+.students-section { margin-top: 0; }
+
+.sec-head {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  font-weight: bold;
+  font-size: var(--fs-section);
+  border-left: var(--bd);
+  border-right: var(--bd);
+  border-bottom: var(--bd);
+}
+.sec-head div { padding: 1mm 1mm; }
+.sec-head .right { border-left: 1px solid black; }
+
+.students {
+  border-collapse: collapse;
+  width: 100%;
+  table-layout: fixed;
+}
+.students th, .students td {
+  border: var(--bd);
+  text-align: center;
+  vertical-align: middle;
+  font-size: var(--fs-small);
+  padding: 0;
+  height: var(--row-h);
+}
+.students thead th { height: var(--header-row-h); font-weight: bold; }
+
+.students .vert {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  height: 12mm;
+  font-size: var(--fs-small);
+}
+
+.students col.col-n     { width: var(--c-n); }
+.students col.col-ci    { width: var(--c-ci); }
+.students col.col-ape   { width: var(--c-ape); }
+.students col.col-nom   { width: var(--c-nom); }
+.students col.col-lugar { width: var(--c-lugar); }
+.students col.col-ef    { width: var(--c-ef); }
+.students col.col-sexo  { width: var(--c-sexo); }
+.students col.col-day   { width: var(--c-day); }
+.students col.col-mes   { width: var(--c-mes); }
+.students col.col-ano   { width: var(--c-ano); }
+.students col.col-area  { width: var(--c-area); }
+
+.students .areas-codes td { font-weight: bold; height: 4mm; }
+
+/* ===========================================================================
+   TOTALS (tfoot dentro de .students)
+   =========================================================================== */
+.totals-foot td {
+  border: var(--bd);
+  text-align: center;
+  font-size: var(--fs-small);
+  height: var(--row-h);
+  padding: 0;
+}
+.totals-foot .total-label {
+  font-weight: bold;
+  font-size: var(--fs-small);
+  text-align: center;
+  vertical-align: middle;
+}
+.totals-foot .stat-label {
+  text-align: left;
+  padding-left: 2mm;
+  font-weight: bold;
+}
+
+/* ===========================================================================
+   PROFESORES + CURSO  (V + VI)
+
+   Layout: .prof-curso-grid = grid 2 cols
+     col izq: tabla .profesores  (1fr)
+     col der: .curso-bloque      (38mm fijo)
+
+   La tabla .profesores tiene 6 columnas:
+     cw-n | cw-abrev | cw-area | cw-name | cw-ci | cw-firma
+
+   thead fila 1: "V. Profesores por Áreas:"  colspan=6
+   thead fila 2: Nº | (vacío) Áreas de Formación colspan=2 | Apellidos... | CI | Firma
+   =========================================================================== */
+.prof-section { margin-top: 0; }
+
+.prof-curso-grid {
+  display: grid;
+  grid-template-columns: 1fr 38mm;
+  border: var(--bd);
+  border-top: 0;
+  align-items: stretch;
+}
+
+/* ---- Tabla profesores ---- */
+.profesores {
+  border-collapse: collapse;
+  width: 100%;
+  table-layout: fixed;
+  /* quitar borde derecho propio — lo pone el grid */
+  border-right: 0;
+}
+.profesores th, .profesores td {
+  border: var(--bd);
+  font-size: var(--fs-small);
+  padding: 0 1mm;
+  height: var(--prof-row-h);
+  text-align: center;
+  vertical-align: middle;
+}
+
+/* Columnas */
+.profesores col.cw-n     { width: var(--p-n); }
+.profesores col.cw-abrev { width: var(--p-abrev); }
+.profesores col.cw-area  { width: var(--p-area); }
+.profesores col.cw-name  { width: var(--p-name); }
+.profesores col.cw-ci    { width: var(--p-ci); }
+.profesores col.cw-firma { width: var(--p-firma); }
+
+/* Fila 1 del thead: título */
+.prof-title-full {
+  text-align: left !important;
+  font-weight: bold;
+  font-size: var(--fs-small);
+  padding: 0.5mm 1mm;
+  height: var(--prof-row-h);
+}
+
+/* Fila 2 del thead: "Áreas de Formación" abarca abrev+area */
+.p-area-h { text-align: left; padding-left: 2mm; }
+
+/* Celdas de datos */
+.profesores .p-abrev { font-weight: bold; text-align: center; }
+.profesores .p-area  { text-align: left; padding-left: 1mm; }
+.profesores .p-name  { text-align: left; padding-left: 2mm; }
+
+/* ---- Bloque VI (derecha) ---- */
+/* ==============================
+   BLOQUE VI
+============================== */
+
+.curso-bloque {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+  height: 100%;
+}
+
+.curso-bloque td {
+  border: var(--bd);
+  font-size: var(--fs-small);
+  text-align: center;
+  vertical-align: middle;
+  padding: 0;
+}
+
+/* mismas alturas que headers */
+.curso-head {
+  height: var(--prof-row-h);
+  font-weight: bold;
+}
+
+/* filas normales */
+.curso-cell {
+  height: var(--prof-row-h);
+}
+.curso-cell > .curso-split{
+  height: 100%;
+}
+
+/* fila grande (equivale filas 8 y 9) */
+.curso-split-row td {
+  height: calc(var(--prof-row-h) * 2);
+  padding: 0;
+}
+
+/* división interna */
+.curso-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  height: 100%;
+}
+
+.curso-split div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-right: var(--bd);
+  padding: 0;
+  line-height: 1;
+  height: 100%;
+}
+
+.curso-split div:last-child {
+  border-right: 0;
+}
+.curso-titulo {
+  font-weight: bold;
+  font-size: var(--fs-small);
+  padding: 1mm;
+  border-bottom: var(--bd);
+  text-align: left;
+}
+.curso-item {
+  font-size: var(--fs-small);
+  text-align: center;
+  padding: 1mm;
+  border-bottom: var(--bd);
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  line-height: 1.3;
+}
+.curso-item:last-of-type { border-bottom: 0; }
+.curso-item-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  flex: 2;
+  border-top: var(--bd);
+}
+.curso-item-split > div {
+  font-size: var(--fs-small);
+  text-align: center;
+  padding: 1mm;
+  border-right: var(--bd);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1.3;
+}
+.curso-item-split > div:last-child { border-right: 0; }
+
+/* ===========================================================================
+   OBSERVACIONES  (VII)
+   =========================================================================== */
+.obs {
+  border: var(--bd);
+  border-top: 0;
+  font-weight: bold;
+  font-size: var(--fs-small);
+  padding: 0.5mm 1.5mm;
+  height: var(--prof-row-h);
+  display: flex;
+  align-items: center;
+} 
+
+/* ===========================================================================
+   FOOTER  (VIII + IX + Sellos)
+   =========================================================================== */
+.footer {
+  display: grid;
+  grid-template-columns: 1fr 1fr 50mm;
+  border: var(--bd);
+  border-top: 0;
+}
+
+/* Columna 1: director izq + sello inst der */
+.foot-director-wrap {
+  display: grid;
+  grid-template-columns: 1fr 42mm;
+  border-right: var(--bd);
+  min-height: 38mm;
+}
+.foot-col-director {
+  padding: 1.5mm;
+  border-right: var(--bd);
+}
+.foot-stamp-inst {
+  padding: 1.5mm;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.foot-col {
+  border-right: var(--bd);
+  padding: 1.5mm;
+  min-height: 38mm;
+}
+.foot-col:last-child { border-right: 0; }
+
+.foot-col .head,
+.foot-col-director .head { font-weight: bold; margin-bottom: 1mm; font-size: var(--fs-small); }
+
+.foot-col .sub,
+.foot-col-director .sub { font-weight: bold; text-align: center; margin: 1mm 0; font-size: var(--fs-small); }
+
+.foot-field {
+  display: flex;
+  align-items: flex-end;
+  gap: 1mm;
+  margin-top: 2mm;
+}
+.foot-field .lbl { font-weight: bold; white-space: nowrap; font-size: var(--fs-small); }
+.foot-field .val { flex: 1; border-bottom: var(--bd); min-height: 3mm; }
+
+.stamp {
+  margin-top: 3mm;
+  border: 1.5px dashed #000;
+  border-radius: 4mm;
+  padding: 3mm 2mm;
+  text-align: center;
+  font-weight: bold;
+  font-size: var(--fs-small);
+  min-height: 22mm;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.prof-head-big{
+  vertical-align: middle;
+  font-weight: bold;
+}
+
+.prof-title-full{
+  text-align: left;
+  padding-left: 2mm;
+  font-weight: bold;
+}
+
+.obs-gap {
+  border-right: var(--bd);
+border-bottom: var(--bd);
+border-top: var(--bd);
+  height: var(--prof-row-h);
+}
+
+
+.footer-table {
+  border-collapse: collapse;
+  width: 100%;
+  table-layout: fixed;
+  border-top: 0;
+}
+.footer-table td {
+  border: var(--bd);
+  font-size: var(--fs-small);
+  padding: 0 1.5mm;
+  vertical-align: middle;
+}
+.ft-title {
+  font-weight: bold;
+  height: var(--prof-row-h);
+}
+.ft-role {
+  text-align: center;
+  font-weight: bold;
+  height: var(--prof-row-h);
+}
+.ft-field-row {
+  height: var(--prof-row-h);
+}
+.ft-lbl { font-weight: bold; }
+.ft-line-row {
+  height: 5mm;
+}
+.ft-line {
+  display: block;
+  border-bottom: var(--bd);
+  width: 100%;
+}
+.ft-stamp-cell {
+  text-align: center;
+  font-weight: bold;
+  vertical-align: middle;
+  border: var(--bd);
+}

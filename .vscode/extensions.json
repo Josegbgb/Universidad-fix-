@@ -1,0 +1,17 @@
+{
+  // Cambio: recomienda las extensiones utiles para este stack.
+  "recommendations": [
+    "dbaeumer.vscode-eslint",
+    "esbenp.prettier-vscode",
+    "bradlc.vscode-tailwindcss",
+    "alexcvzz.vscode-sqlite",
+    "humao.rest-client",
+    // Cambio: integracion directa con GitHub desde VS Code.
+    "github.vscode-pull-request-github",
+    "github.vscode-github-actions",
+    "github.remotehub",
+    // Cambio: muestra historial, autoria y grafo de ramas dentro de VS Code.
+    "eamodio.gitlens",
+    "mhutchie.git-graph"
+  ]
+}

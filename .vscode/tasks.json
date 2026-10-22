@@ -1,0 +1,37 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      // Cambio: levanta Vite desde la carpeta del frontend.
+      "label": "Frontend: npm run dev",
+      "type": "shell",
+      "command": "npm",
+      "args": ["run", "dev"],
+      "options": {
+        "cwd": "${workspaceFolder}/frontend/react"
+      },
+      "problemMatcher": []
+    },
+    {
+      // Cambio: levanta Express con recarga usando Node watch.
+      "label": "Backend: node --watch index.js",
+      "type": "shell",
+      "command": "node",
+      "args": ["--watch", "index.js"],
+      "options": {
+        "cwd": "${workspaceFolder}/backend"
+      },
+      "problemMatcher": []
+    },
+    {
+      // Cambio: permite iniciar frontend y backend juntos desde VS Code.
+      "label": "Dev: frontend + backend",
+      "dependsOn": [
+        "Frontend: npm run dev",
+        "Backend: node --watch index.js"
+      ],
+      "dependsOrder": "parallel",
+      "problemMatcher": []
+    }
+  ]
+}

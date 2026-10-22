@@ -1,0 +1,173 @@
+.grados_container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.grados_box{
+    margin: 20px;
+    height: 120px;
+    width: 150px;
+    border-radius: 20%;
+    align-content: center;
+    text-align: center  ;
+    background-color: rgb(136, 136, 136);
+}
+
+h1{
+    margin: 15px;
+    font-size: clamp(16px,2vw,25px);
+}
+#container_flex{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+}
+table{
+    text-align: center;
+    width: 100%;
+}
+
+label{
+    display: block;
+}
+.form_group{
+    margin: 10px 0;
+    text-align: center;
+}
+
+#agregar_box{
+    padding: 10px;
+    border: white  solid  1px;
+    border-radius: 20px;
+    text-align: center;
+    width: 20%;
+}
+.mensaje_error{
+    color: red;
+}
+.group {
+    flex-direction: column;
+margin:60px  auto;
+ display: flex;
+ line-height: 28px;
+ align-items: center;
+ position: relative;
+ max-width: 60%;
+}
+#inputBox{
+    display: flex;
+    align-items: center;
+}
+
+.icon {
+ position: absolute;
+ left: 1rem;
+ fill: #9e9ea7;
+ width: 1rem;
+ height: 1rem;
+}
+
+
+.sugerencias_box{
+    position: absolute;
+    top: 100%;
+    width: 80%;
+    text-align: center;
+}
+.modal_container{
+    display: block;
+    position: absolute !important;
+    top: 10%;
+    right: 50%;
+}
+.estilos.alert_dark{
+    background-color: black;
+    color: white    ;
+}
+.table_actions {
+  white-space: nowrap;
+}
+
+#container_asignaturas {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 👈 SIEMPRE 2 */
+  gap: 24px;
+  padding: 20px;
+}
+.table_container {
+  width: 100%;
+  overflow-x: hidden; /* 👈 elimina scroll */
+}
+
+table {
+  width: 100%;
+  table-layout: fixed; /* 👈 evita que se desborde */
+}
+
+.tables h2{
+    font-size: larger;
+}
+#box_asignaturas{
+    display: flex !important;
+    align-items: center;
+}
+#container_btn_agregar{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    border-top: solid black 1px;
+
+ 
+}
+#btn_agregar_asignatuas{
+
+    width: 10%;
+    justify-items: center;
+}
+#scroll_area_box{
+    padding: 20px;
+}
+#scroll_bar_title{
+    font-size: 12px   ;
+}
+
+.scroll_content{
+    margin: 6px 0;
+    font-size: small;
+    border-top: solid gray 1px ;
+    border-top-right-radius: 5px;
+    cursor: pointer;
+    
+}
+.grid_container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.form_field {
+  width: 100%;
+}
+
+/* O si prefieres flexbox: */
+/*
+.grid_container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.form_field {
+  flex: 1 0 calc(50% - 8px);
+  min-width: 0;
+}
+*/
+@media (max-width: 900px) {
+  #container_asignaturas {
+    grid-template-columns: 1fr; /* 👈 1 columna en móvil */
+  }
+}

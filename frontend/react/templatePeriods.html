@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Resumen Final del Rendimiento Estudiantil</title>
+  <link rel="stylesheet" href="TemplateStyle.css">
+</head>
+<body>
+<div class="sheet">
+
+  <!-- 1. HEADER -->
+  <div class="header">
+    <div class="flag-box">
+      <img src="download (1).png" alt="">
+    </div>
+    <div class="header-title">
+      <div class="title-line underline">RESUMEN FINAL DEL RENDIMIENTO ESTUDIANTIL</div>
+      <div class="title-line"><b>Código del Formato:</b> <span class="underline">31060&nbsp;&nbsp;EMGCT</span></div>
+      <!-- Cambio: estos valores se llenan dinámicamente según el período exportado. -->
+      <div class="title-line"><b>I. Año Escolar:</b> <span class="underline" data-field="periodo"></span></div>
+      <div class="title-line"><b>Tipo de Evaluación:</b> <span class="underline" data-field="tipo-evaluacion"></span> &nbsp; <b>Mes y Año:</b> <span class="underline" data-field="mes-anio"></span></div>
+    </div>
+  </div>
+
+  <!-- 2. INSTITUCIÓN -->
+  <div class="section-title">II. Datos de la Institución Educativa:</div>
+  <div class="inst-grid">
+    <div class="row r1">
+      <div class="field"><span class="lbl">Código de la Institución Educativa:</span><span class="val underline">OD02012303</span></div>
+      <div class="field"><span class="lbl">Denominación y Epónimo:</span><span class="val underline">LICEO NACIONAL BOLIVARIANO GRAN MARISCAL ANTONIO JOSÉ DE SUCRE</span></div>
+    </div>
+    <div class="row r2">
+      <div class="field"><span class="lbl">Dirección:</span><span class="val underline">URB. BRISAS DEL LAGO ENTRE AV 1 Y 2 ENTRE CALLE 7 Y 8</span></div>
+      <div class="field"><span class="lbl">Teléfono:</span><span class="val underline"></span></div>
+    </div>
+    <div class="row r3">
+      <div class="field"><span class="lbl">Municipio:</span><span class="val underline">CABIMAS</span></div>
+      <div class="field"><span class="lbl">Entidad Federal:</span><span class="val underline">ZULIA</span></div>
+      <div class="field"><span class="lbl">CDCEE:</span><span class="val underline">ZULIA</span></div>
+    </div>
+    <div class="row r4">
+      <div class="field"><span class="lbl">Director(a):</span><span class="val underline">RODRIGUEZ LOPEZ JHOANNA ISKELL</span></div>
+      <div class="field"><span class="lbl">Cédula de Identidad:</span><span class="val underline">V 12.714.129</span></div>
+    </div>
+  </div>
+
+  <!-- 3 + 4. TABLA ESTUDIANTES + TOTALES -->
+  <div class="students-section">
+    <div class="sec-head">
+      <div>III. Identificación del Estudiante:</div>
+      <div class="right">IV. Resumen Final del Rendimiento:</div>
+    </div>
+
+    <table class="students">
+      <colgroup>
+        <col class="col-n">
+        <col class="col-ci">
+        <col class="col-ape">
+        <col class="col-nom">
+        <col class="col-lugar">
+        <col class="col-ef">
+        <col class="col-sexo">
+        <col class="col-day">
+        <col class="col-mes">
+        <col class="col-ano">
+        <col class="col-area"><col class="col-area"><col class="col-area"><col class="col-area"><col class="col-area">
+        <col class="col-area"><col class="col-area"><col class="col-area"><col class="col-area"><col class="col-area">
+      </colgroup>
+
+      <thead>
+        <tr>
+          <th rowspan="5">Nº</th>
+          <th rowspan="5">Cédula de<br>Identidad</th>
+          <th rowspan="5">Apellidos</th>
+          <th rowspan="5">Nombres</th>
+          <th rowspan="5">Lugar de<br>Nacimiento</th>
+          <th rowspan="5">EF</th>
+          <th rowspan="5">SEXO</th>
+          <th colspan="3" rowspan="2">FECHA DE<br>NACIMIENTO</th>
+          <th colspan="10">COMPONENTES</th>
+        </tr>
+        <tr>
+          <th colspan="8">GENERAL</th>
+          <th colspan="2">FORMACIÓN CIENTÍFICA<br>TECNOLÓGICA Y PRODUCTIVA</th>
+        </tr>
+        <tr>
+          <th class="vert" rowspan="3">DIA</th>
+          <th class="vert" rowspan="3">MES</th>
+          <th class="vert" rowspan="3">AÑO</th>
+          <th colspan="8">ÁREAS DE FORMACIÓN</th>
+          <th colspan="2">ÁREAS DE FORMACIÓN</th>
+        </tr>
+        <tr class="areas-codes">
+          <td>01</td><td>02</td><td>03</td><td>04</td><td>05</td><td>06</td><td>07</td><td>08</td><td>09</td><td>10</td>
+        </tr>
+        <tr class="areas-codes">
+          <td>LL</td><td>ID</td><td>MA</td><td>EF</td><td>BAT</td><td>FI</td><td>QU</td><td>GHSN</td><td>ITP</td><td>OV</td>
+        </tr>
+      </thead>
+
+      <!-- Cambio: las filas se regeneran dinámicamente desde periodReportExport.ts. -->
+      <tbody>
+        <tr><td>01</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+        <tr><td>02</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+        <tr><td>03</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+        <tr><td>04</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+        <tr><td>05</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+        <tr><td>06</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+        <tr><td>07</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+        <tr><td>08</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+        <tr><td>09</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+        <tr><td>10</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+        <tr><td>11</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+        <tr><td>12</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+        <tr><td>13</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+        <tr><td>14</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+        <tr><td>15</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+        <tr><td>16</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+        <tr><td>17</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+        <tr><td>18</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+        <tr><td>19</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+        <tr><td>20</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+        <tr><td>21</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+        <tr><td>22</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+        <tr><td>23</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+        <tr><td>24</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+        <tr><td>25</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+        <tr><td>26</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+        <tr><td>27</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+        <tr><td>28</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+        <tr><td>29</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+        <tr><td>30</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+        <tr><td>31</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+        <tr><td>32</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+        <tr><td>33</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+        <tr><td>34</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+        <tr><td>35</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+      </tbody>
+
+      <!-- Cambio: los totales se inyectan desde la BD al exportar. -->
+      <tfoot class="totals-foot">
+        <tr>
+          <td class="total-label" colspan="3" rowspan="5">Total de Áreas<br>de Formación</td>
+          <td class="stat-label" colspan="7">Inscritos</td>
+          <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+        </tr>
+        <tr>
+          <td class="stat-label" colspan="7">Inasistentes</td>
+          <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+        </tr>
+        <tr>
+          <td class="stat-label" colspan="7">Aprobados</td>
+          <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+        </tr>
+        <tr>
+          <td class="stat-label" colspan="7">No Aprobados</td>
+          <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+        </tr>
+        <tr>
+          <td class="stat-label" colspan="7">No Cursantes</td>
+          <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+        </tr>
+      </tfoot>
+    </table>
+  </div>
+
+  <!-- 5 + 6. PROFESORES + CURSO -->
+  <div class="prof-section">
+    <div class="prof-curso-grid">
+
+      <!-- IZQUIERDA: tabla profesores con 6 columnas -->
+      <table class="profesores">
+        <colgroup>
+          <col class="cw-n">      <!-- Nº: 5mm -->
+          <col class="cw-abrev">  <!-- LL/ID/MA...: 8mm, sin header -->
+          <col class="cw-area">   <!-- Área nombre completo: 40mm -->
+          <col class="cw-name">   <!-- Apellidos y Nombres: 55mm -->
+          <col class="cw-ci">     <!-- Cédula: 22mm -->
+          <col class="cw-firma">  <!-- Firma: resto -->
+        </colgroup>
+      <thead>
+
+  <!-- FILA SUPERIOR -->
+  <tr>
+
+    <!-- SOLO ocupa Nº + abreviatura + área -->
+    <th colspan="3" class="prof-title-full">
+      V. Profesores por Áreas:
+    </th>
+
+    <!-- ESTOS SUBEN HACIA ARRIBA -->
+    <th rowspan="2" class="prof-head-big">
+      Apellidos y Nombres del Profesor
+    </th>
+
+    <th rowspan="2" class="prof-head-big">
+      Cédula de<br>Identidad
+    </th>
+
+    <th rowspan="2" class="prof-head-big">
+      Firma
+    </th>
+
+  </tr>
+
+  <!-- FILA INFERIOR -->
+  <tr>
+
+    <th>Nº</th>
+
+    <th colspan="2" class="p-area-h" style="text-align: left !important;">
+      Áreas de Formación
+    </th>
+
+  </tr>
+
+</thead>
+        <tbody>
+          <tr><td>01</td><td class="p-abrev">LL</td>  <td class="p-area">Lengua y Literatura</td>                     <td class="p-name"></td><td></td><td></td></tr>
+          <tr><td>02</td><td class="p-abrev">ID</td>  <td class="p-area">Idiomas</td>                                 <td class="p-name"></td><td></td><td></td></tr>
+          <tr><td>03</td><td class="p-abrev">MA</td>  <td class="p-area">Matemática</td>                              <td class="p-name"></td><td></td><td></td></tr>
+          <tr><td>04</td><td class="p-abrev">EF</td>  <td class="p-area">Educación Física</td>                        <td class="p-name"></td><td></td><td></td></tr>
+          <tr><td>05</td><td class="p-abrev">BAT</td> <td class="p-area">Biología, Ambiente y Tecnología</td>         <td class="p-name"></td><td></td><td></td></tr>
+          <tr><td>06</td><td class="p-abrev">FI</td>  <td class="p-area">Física</td>                                  <td class="p-name"></td><td></td><td></td></tr>
+          <tr><td>07</td><td class="p-abrev">QU</td>  <td class="p-area">Química</td>                                 <td class="p-name"></td><td></td><td></td></tr>
+          <tr><td>08</td><td class="p-abrev">GHSN</td><td class="p-area">Geografía, Historia y Soberanía Nacional</td><td class="p-name"></td><td></td><td></td></tr>
+          <tr><td>09</td><td class="p-abrev">ITP</td> <td class="p-area">Innovación Tecnológica y Productiva</td>     <td class="p-name"></td><td></td><td></td></tr>
+          <tr><td>10</td><td class="p-abrev">OV</td>  <td class="p-area">Orientación Vocacional</td>                  <td class="p-name"></td><td></td><td></td></tr>
+        </tbody>
+      </table>
+
+      <!-- DERECHA: bloque VI -->
+     <table class="curso-bloque">
+
+  <tr>
+    <td class="curso-head" style="text-align: left !important;">
+      VI. Identificación del Curso:
+    </td>
+  </tr>
+
+  <tr>
+    <td class="curso-head">
+      PLAN DE ESTUDIO:
+    </td>
+  </tr>
+
+  <tr>
+    <td class="curso-cell">
+      CIENCIA Y TECNOLOGÍA
+    </td>
+  </tr>
+
+  <tr>
+    <td class="curso-head">
+      CÓDIGO:
+    </td>
+  </tr>
+
+  <tr>
+    <td class="curso-cell">
+      31060
+    </td>
+  </tr>
+
+  <tr>
+    <td class="curso-head">
+      AÑO CURSADO
+    </td>
+  </tr>
+
+  <tr>
+    <td class="curso-cell"></td>
+  </tr>
+
+  <tr>
+    <td class="curso-head">
+      SECCIÓN
+    </td>
+  </tr>
+
+  <tr>
+    <td class="curso-cell"></td>
+  </tr>
+
+  <!-- FILA DOBLE -->
+  <tr class="curso-split-row">
+    <td>
+
+      <div class="curso-split">
+
+        <div>
+          Nº DE<br>
+          ESTUDIANTES<br>
+          POR SECCIÓN
+        </div>
+
+        <div>
+          Nº DE<br>
+          ESTUDIANTES EN<br>
+          ESTA PÁGINA
+        </div>
+
+      </div>
+
+    </td>
+  </tr>
+
+  <!-- FILA FINAL -->
+<tr>
+  <td class="curso-cell">
+    <div class="curso-split">
+      <div></div>
+      <div></div>
+    </div>
+  </td>
+</tr>
+
+</table>
+
+    </div>
+  </div>
+
+  <!-- 7. OBSERVACIONES -->
+  <div class="obs">VII. Observaciones:</div>
+  <div class="obs-gap"></div>
+
+  <!-- 8. FOOTER -->
+ <table class="footer-table">
+  <colgroup>
+    <col style="width:52mm">
+    <col style="width:48mm">
+    <col style="width:65mm">
+    <col>
+  </colgroup>
+  <tbody>
+    <tr>
+      <td class="ft-title">VIII. Fecha de Remisión:</td>
+      <td rowspan="8" class="ft-stamp-cell">SELLO DE LA INSTITUCIÓN EDUCATIVA</td>
+      <td class="ft-title">IX. Fecha de Recepción:</td>
+      <td rowspan="8" class="ft-stamp-cell">SELLO DEL CENTRO DE DESARROLLO DE LA CALIDAD EDUCATIVA ESTADAL</td>
+    </tr>
+    <tr>
+      <td class="ft-role">Director(a)</td>
+      <td class="ft-role">Funcionario Receptor</td>
+    </tr>
+    <tr>
+      <td class="ft-field-row"><span class="ft-lbl">Apellidos y Nombres:</span></td>
+      <td class="ft-field-row"><span class="ft-lbl">Apellidos y Nombres:</span></td>
+    </tr>
+    <tr>
+      <td class="ft-line-row"></td>
+      <td class="ft-line-row"></td>
+    </tr>
+    <tr>
+      <td class="ft-field-row"><span class="ft-lbl">Cédula de Identidad:</span></td>
+      <td class="ft-field-row"><span class="ft-lbl">Cédula de Identidad.:</span></td>
+    </tr>
+    <tr>
+      <td class="ft-line-row"></td>
+      <td class="ft-line-row"></td>
+    </tr>
+    <tr>
+      <td class="ft-field-row"><span class="ft-lbl">Firma:</span></td>
+      <td class="ft-field-row"><span class="ft-lbl">Firma:</span></td>
+    </tr>
+  
+  </tbody>
+</table>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,37 @@
+# Cambio: evita subir dependencias, builds y datos locales al repositorio.
+node_modules/
+**/node_modules/
+
+# Cambio: las herramientas portables se reinstalan localmente, no se versionan.
+.tools/
+
+# Cambio: la base SQLite local puede contener datos reales o de prueba.
+backend/db/*.db
+backend/db/*.db-*
+
+# Cambio: salidas generadas y cache de frontend/backend.
+dist/
+dist-ssr/
+build/
+.vite/
+.cache/
+coverage/
+
+# Cambio: variables de entorno, logs y archivos temporales locales.
+.env
+.env.*
+!.env.example
+*.log
+logs/
+tmp/
+temp/
+
+# Cambio: archivos de sistema/editor no necesarios para compartir el proyecto.
+.DS_Store
+Thumbs.db
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?

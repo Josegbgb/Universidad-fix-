@@ -1,0 +1,26 @@
+{
+  // Cambio: las terminales nuevas de VS Code usan el Node portable compatible.
+  "terminal.integrated.env.windows": {
+    "PATH": "${workspaceFolder}\\.tools\\node-v22.23.1-win-x64;${env:PATH}"
+  },
+  // Cambio: VS Code usa el TypeScript instalado en el frontend.
+  "typescript.tsdk": "frontend/react/node_modules/typescript/lib",
+  // Cambio: ESLint trabaja desde la app React.
+  "eslint.workingDirectories": [
+    {
+      "directory": "frontend/react",
+      "changeProcessCWD": true
+    }
+  ],
+  // Cambio: Git revisa cambios remotos y sincroniza despues de cada commit local.
+  "git.autofetch": true,
+  "git.pruneOnFetch": true,
+  "git.confirmSync": false,
+  "git.postCommitCommand": "sync",
+  // Cambio: muestra colores/letras de archivos modificados o no sincronizados en el explorador.
+  "git.decorations.enabled": true,
+  "explorer.decorations.badges": true,
+  "explorer.decorations.colors": true,
+  // Cambio: facilita commits rapidos desde Source Control cuando solo hay cambios staged.
+  "git.enableSmartCommit": true
+}

@@ -1,0 +1,708 @@
+###Obtener Estudiantes
+GET http://localhost:1234/estudiantes
+
+
+###Obtener Estudiantes por cedula
+GET http://localhost:1234/estudiantes/28963521
+
+
+
+###Crear estudiante
+POST http://localhost:1234/estudiantes
+Content-Type: application/json
+
+{
+   "nombre":"Juan",
+   "apellido":"Perez",
+   "cedula":29635142,
+   "correo":"juan@correo.com",
+   "telefono":"04148965324"
+}
+
+
+####Eliminar estudiante
+DELETE http://localhost:1234/estudiantes/1
+
+
+###Actualizar 
+PATCH http://localhost:1234/estudiantes/32
+Content-Type: application/json
+
+{
+  "nombre":"Pablo",
+   "apellido":"Perez",
+   "cedula": 29965477
+} 
+
+### restore studiante
+PATCH http://localhost:1234/estudiantes/1/restore
+
+
+###Obtener Estudiantes eliminados
+GET http://localhost:1234/estudiantes/deleted
+
+
+
+
+##############
+##############
+##############
+##############
+##############
+##############
+##############
+##############
+##############
+##############
+##############
+##############
+##############
+
+
+
+
+
+###Obtener Años escolares
+GET http://localhost:1234/grado
+
+
+###Obtener Años por numero de año
+GET http://localhost:1234/grado?anio=2
+
+
+###Obtener Años por año y seccion 
+GET http://localhost:1234/grado?anio=2&seccion=a
+
+
+###Crear grado
+POST http://localhost:1234/grado
+Content-Type: application/json
+
+{
+   "anio":1,
+   "seccion":"A"
+}
+
+
+###Eliminar grado
+DELETE  http://localhost:1234/grado/1
+
+
+####Actualizar grado
+PATCH http://localhost:1234/grado/11
+Content-Type: application/json
+
+{
+   "anio":1,
+   "seccion":"a"
+}
+
+
+
+
+
+##############
+##############
+##############
+##############
+##############
+##############
+##############
+
+
+###Obtener relaciones por año y seccion
+GET http://localhost:1234/anio_asignatura_template/1
+
+
+
+
+###
+POST http://localhost:1234/anio_asignatura_template/
+Content-Type: application/json
+
+{
+   "anio":1,
+   "id_asignatura":2
+}
+
+
+####Eliminar 
+DELETE http://localhost:1234/anio_asignatura_template/1/3
+
+
+##############
+##############
+##############
+##############
+##############
+##############
+
+
+###Obtener relaciones por año y seccion
+GET http://localhost:1234/relacion_estudiante_grados?anio=1&seccion=a
+
+
+
+###Crear relacion estudiante grado
+POST http://localhost:1234/relacion_estudiante_grados
+Content-Type: application/json
+
+{
+   "id_estudiante":1,
+   "id_grado":1
+}
+
+
+
+###Eliminar relacion estudiante grado
+DELETE http://localhost:1234/relacion_estudiante_grados/1
+
+
+###Actualizar relacion estudiante grado
+PATCH http://localhost:1234/relacion_estudiante_grados/4
+Content-Type: application/json
+
+{
+   "id_estudiante": 11,
+   "id_grado": 1
+}
+
+
+##############
+##############
+##############
+##############
+##############
+##############
+##############
+##############
+##############
+##############
+##############
+##############
+##############
+
+
+#### Obtener Profesores
+GET http://localhost:1234/profesores
+
+
+### Obtener Profesores por nombre
+GET http://localhost:1234/profesores?nombre=J
+
+
+### Crear Profesores 
+POST http://localhost:1234/profesores
+Content-Type: application/json
+
+{
+   "nombre":"Login",
+   "apellido":"test",
+   "cedula":29974444,
+   "correo":"jose@correo.com",
+   "telefono":"04125987744",
+   "direccion":"Calle Luna Calle Sol"
+   
+}
+
+
+####Obtenr por cedula
+GET http://localhost:1234/asignatura_profesor_template/8
+
+
+
+####Obtenr por cedula
+GET http://localhost:1234/profesores/20938475
+
+####Obtenr por id
+GET http://localhost:1234/profesores/byid/8
+
+
+####Eliminar Profesor
+DELETE http://localhost:1234/profesores/1
+
+
+####Actualizar Profesor
+PATCH http://localhost:1234/profesores/1
+Content-Type: application/json
+
+{
+   "nombre":"Luisa",
+   "apellido":"Nunez",
+   "cedula": 29999999
+}
+
+
+### restore profesor
+PATCH http://localhost:1234/profesores/1/restore
+
+
+###Obtener Profesores eliminados
+GET http://localhost:1234/profesores/deleted
+
+##############
+##############
+##############
+##############
+##############
+##############
+##############
+##############
+##############
+##############
+##############
+#############
+
+
+
+##############
+##############
+##############
+##############
+##############
+##############
+##############
+##############
+##############
+##############
+##############
+##############
+##############
+
+
+
+
+##############
+##############
+##############
+##############
+
+
+### Obtener Asignaturas
+GET http://localhost:1234/asignaturas
+
+####Crear Asignatura
+
+POST http://localhost:1234/asignaturas
+Content-Type:application/json 
+
+{
+   "asignatura":"Deporte"
+}
+
+
+### Eliminar Asignatura
+DELETE http://localhost:1234/asignaturas/17
+
+
+### Actualizar Asignatura
+PATCH http://localhost:1234/asignaturas/1
+Content-Type: application/json
+
+{
+   "asignatura":"Educacion Fisica"
+}
+
+
+
+##############
+##############
+##############
+
+
+
+### Obtener relaciones grado asignatura
+GET http://localhost:1234/relacion_grado_asignatura
+
+
+
+### Obtener relaciones grado asignatura por anio
+GET http://localhost:1234/relacion_grado_asignatura?anio=1
+
+
+###liminar relacion
+DELETE http://localhost:1234/relacion_grado_asignatura/1/Ingles
+
+
+### Crear relacion grado asignatura
+POST http://localhost:1234/relacion_grado_asignatura
+Content-Type: application/json
+
+{
+   "id_asignatura":6,
+   "anio": 1
+}
+
+
+
+
+
+
+###Obtener relacion asignatura profesor
+GET http://localhost:1234/relacion_asignatura_profesor
+
+
+####Obtener relacion por id_profesor
+GET http://localhost:1234/relacion_asignatura_profesor/2
+
+
+####Eliminar relacion por id
+DELETE  http://localhost:1234/relacion_asignatura_profesor/73
+
+
+
+####Crear relacion asignatura_profesor
+POST http://localhost:1234/relacion_asignatura_profesor
+Content-Type: application/json
+
+{
+   "id_rel_grado_asignatura":86,
+   "id_profesor":2
+}
+
+### LOGIN
+POST http://localhost:1234/api/users/login
+Content-Type: application/json
+
+{
+  "email": "josemgb@gmail.com", // credencial valida
+  "password": "30941143" // credencial valida
+}
+
+
+### Bootstrap: crear primer admin sin token (solo cuando no existe admin activo)
+POST http://localhost:1234/api/users/register
+Content-Type: application/json
+
+{
+  "email": "admin.inicial@liceo.test",
+  "password": "Admin123*",
+  "role": "admin",
+  "nombre": "Admin",
+  "apellido": "Inicial",
+  "cedula": 12345678,
+  "correo": "admin.inicial@liceo.test",
+  "telefono": "04141234567",
+  "direccion": "Direccion inicial"
+}
+
+
+###Registrar  administrador
+POST http://localhost:1234/administradores
+Content-Type: application/json
+
+{
+   "nombre":"Jose Miguel",
+   "apellido":"Gonzalez",
+   "cedula":28963521,
+   "correo": "josemgb27@gmail.com",
+   "telefono": "04146243429",
+   "direccion": "Casa #44" 
+}
+
+####
+GET http://localhost:1234/api/users/users
+
+###update password
+POST http://localhost:1234/api/users/password
+Content-Type: application/json
+
+
+{
+  "email": "profesor22@gmail.com",
+  "currentPassword": "30941143",
+  "newPassword": "30941111"
+}
+
+### Telegram - estado de vinculacion propia
+GET http://localhost:1234/telegram/vinculacion
+Authorization: Bearer {{token}}
+
+
+### Telegram - generar codigo de vinculacion propia
+POST http://localhost:1234/telegram/vinculacion/codigo
+Authorization: Bearer {{token}}
+
+
+### Telegram - generar codigo para representante (admin)
+POST http://localhost:1234/telegram/representantes/1/codigo
+Authorization: Bearer {{token}}
+
+
+### Telegram - recordatorio a profesores con notas pendientes (admin)
+POST http://localhost:1234/telegram/recordatorios/notas-pendientes
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "id_lapso": 1
+}
+
+#############
+#############
+#############
+#############
+
+###Obtener Representantes
+GET http://localhost:1234/representantes
+
+
+###Obtener Representantes por cedula
+GET http://localhost:1234/representantes/28963521
+
+
+###Obtener Representantes eliminados
+GET http://localhost:1234/representantes/deleted
+
+###Crear representantes
+POST http://localhost:1234/representantes
+Content-Type: application/json
+
+{
+   "nombre":"Juan",
+   "apellido":"Perez",
+   "cedula":18964123,
+   "correo":"juan@correo.com",
+   "telefono":"04148965324",
+   "direccion":"Calle Falsa 123"
+}
+
+
+####Eliminar representantes
+DELETE http://localhost:1234/representantes/3
+
+
+###Actualizar 
+PATCH http://localhost:1234/representantes/32
+Content-Type: application/json
+
+{
+  "nombre":"Pablo",
+   "apellido":"Perez",
+   "cedula": 29965477
+} 
+
+PATCH  http://localhost:1234/representantes/8/restore
+
+
+
+###Obtener Representantes y Estudiantes relacionados
+GET http://localhost:1234/relacion_estudiante_representantes
+
+###Crear relacion Representantes y Estudiantes 
+POST  http://localhost:1234/relacion_estudiante_representantes
+Content-Type: application/json
+
+{
+  "id_estudiante": 1,
+   "id_representante":1,
+   "parentesco": "Padre"
+} 
+
+
+###Eliminar relacion Representantes y Estudiantes 
+DELETE   http://localhost:1234/relacion_estudiante_representantes/1
+
+
+###Actualizar relacion Representantes y Estudiantes
+PATCH  http://localhost:1234/relacion_estudiante_representantes/1
+Content-Type: application/json
+
+{
+  "id_estudiante": 1,
+   "id_representante":1,
+   "parentesco": "Padre"
+} 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+##############################################
+## PERIODOS ESCOLARES
+##############################################
+
+### Obtener todos los periodos
+GET http://localhost:1234/periodos
+
+### Obtener periodo activo
+GET http://localhost:1234/periodos/activo
+
+### Obtener periodo por ID
+GET http://localhost:1234/periodos/1
+
+### Obtener resumen de un periodo (fases + conteos por estado)
+GET http://localhost:1234/periodos/1/resumen
+
+### Crear periodo
+### nombre debe ser formato YYYY-YYYY
+### fecha_inicio y fecha_fin son opcionales
+POST http://localhost:1234/periodos
+Content-Type: application/json
+
+{
+  "nombre": "2024-2025",
+  "fecha_inicio": "2024-09-16",
+  "fecha_fin": "2025-07-15"
+}
+
+### Activar un periodo existente (si no hay otro activo)
+PATCH http://localhost:1234/periodos/1/activar
+
+### Cerrar un periodo (definitivo, no reversible)
+### Requiere que la fase finalizacion esté cerrada
+PATCH http://localhost:1234/periodos/1/cerrar
+
+### Abrir una fase manualmente
+### fases válidas: finalizacion | revision | pendiente_oct | pendiente_dic | pendiente_ene | pendiente_jun
+PATCH http://localhost:1234/periodos/1/fases/revision/abrir
+
+PATCH http://localhost:1234/periodos/1/fases/pendiente_oct/abrir
+
+PATCH http://localhost:1234/periodos/1/fases/pendiente_dic/abrir
+
+PATCH http://localhost:1234/periodos/1/fases/pendiente_ene/abrir
+
+PATCH http://localhost:1234/periodos/1/fases/pendiente_jun/abrir
+
+### Cerrar una fase manualmente
+PATCH http://localhost:1234/periodos/1/fases/finalizacion/cerrar
+
+PATCH http://localhost:1234/periodos/1/fases/revision/cerrar
+
+
+
+
+##############################################
+## FINALIZACION
+##############################################
+
+### Obtener lista de estudiantes del periodo para la planilla de finalización
+### (excluye sección U, solo alumnos regulares)
+GET http://localhost:1234/finalizacion/1/estudiantes
+
+### Preview: ver qué pasaría si se cierra ahora (sin escribir en BD)
+### Muestra quiénes aprobarían y quiénes irían a revisión
+GET http://localhost:1234/finalizacion/1/preview
+
+### Evaluar un estudiante individual en un periodo
+GET http://localhost:1234/finalizacion/1/evaluar/5
+
+### Cerrar la fase de finalización
+### - Marca aprobados
+### - Manda a revisión a los que reprobaron algo
+### - Abre automáticamente la fase de revisión
+### ACCIÓN DEFINITIVA — mostrar preview antes de ejecutar
+POST http://localhost:1234/finalizacion/1/cerrar
+
+
+
+
+##############################################
+## REVISION
+##############################################
+
+### Obtener estudiantes en revisión con sus materias reprobadas
+GET http://localhost:1234/revision/1/estudiantes
+
+### Registrar nota de revisión para una materia pendiente
+### id_pendiente viene del campo "id" de cada materia en getEstudiantesRevision
+PATCH http://localhost:1234/revision/nota/14
+Content-Type: application/json
+
+{
+  "nota": 12
+}
+
+
+###
+PATCH http://localhost:1234/revision/nota/15
+Content-Type: application/json
+
+{
+  "nota": 8
+}
+
+### Cerrar la fase de revisión
+### - Los que quedaron con ≤ 2 reprobadas → pasan con pendientes a sección U
+### - Los que quedaron con > 2 reprobadas → estado 'reprobado'
+### - Abre automáticamente pendiente_oct
+### ACCIÓN DEFINITIVA
+POST http://localhost:1234/revision/1/cerrar
+
+
+
+
+##############################################
+## MATERIAS PENDIENTES
+##############################################
+
+### Obtener estudiantes en un momento de pendiente
+### fase: pendiente_oct | pendiente_dic | pendiente_ene | pendiente_jun
+GET http://localhost:1234/pendientes/1/pendiente_oct/estudiantes
+
+GET http://localhost:1234/pendientes/1/pendiente_dic/estudiantes
+
+GET http://localhost:1234/pendientes/1/pendiente_ene/estudiantes
+
+GET http://localhost:1234/pendientes/1/pendiente_jun/estudiantes
+
+### Historial de pendientes de un estudiante (todos los periodos)
+GET http://localhost:1234/pendientes/5/historial
+
+### Registrar nota en un momento de pendiente
+### id_pendiente viene del campo "id" de cada materia en getEstudiantesPorFase
+### fase debe coincidir con la fase activa
+PATCH http://localhost:1234/pendientes/nota/22
+Content-Type: application/json
+
+{
+  "nota": 14,
+  "fase": "pendiente_oct"
+}
+
+PATCH http://localhost:1234/pendientes/nota/23
+Content-Type: application/json
+
+{
+  "nota": 7,
+  "fase": "pendiente_dic"
+}
+
+### Cerrar un momento de pendiente
+### Los que reprueban pasan al siguiente momento
+### Si es pendiente_jun y reprueban → pierden el año completo
+### ACCIÓN DEFINITIVA
+POST http://localhost:1234/pendientes/1/pendiente_oct/cerrar
+
+POST http://localhost:1234/pendientes/1/pendiente_dic/cerrar
+
+POST http://localhost:1234/pendientes/1/pendiente_ene/cerrar
+
+### Último momento — los que reprueban acá pierden el año completo
+POST http://localhost:1234/pendientes/1/pendiente_jun/cerrar
